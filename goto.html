@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Information</title>
+<style>
+    #inputSection {
+        margin-bottom: 20px;
+    }
+    .user-info {
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div id="inputSection">
+    <input type="text" id="nameInput" placeholder="Name">
+    <input type="email" id="emailInput" placeholder="Email">
+    <input type="text" id="githubInput" placeholder="GitHub Username">
+    <button id="addButton">Add Information</button>
+</div>
+
+<div id="outputSection">
+    
+</div>
+
+<script>
+document.getElementById("addButton").addEventListener("click", function() {
+    var name = document.getElementById("nameInput").value;
+    var email = document.getElementById("emailInput").value;
+    var github = document.getElementById("githubInput").value;
+
+    if (name && email && github) {
+        var outputSection = document.getElementById("outputSection");
+        
+        var div = document.createElement("div");
+        div.classList.add("user-info");
+        
+        var namePara = document.createElement("p");
+        namePara.textContent = "Name: " + name;
+        
+        var emailPara = document.createElement("p");
+        emailPara.textContent = "Email: " + email;
+        
+        var githubPara = document.createElement("p");
+        githubPara.textContent = "GitHub Username: " + github;
+        
+        var gotoButton = document.createElement("button");
+        gotoButton.textContent = "Go to User";
+        gotoButton.addEventListener("click", function() {
+            // Here you can define the action when "Go to User" button is clicked.
+            // For demonstration, let's just log the user information.
+            console.log("Name: " + name + "\nEmail: " + email + "\nGitHub Username: " + github);
+        });
+        
+        div.appendChild(namePara);
+        div.appendChild(emailPara);
+        div.appendChild(githubPara);
+        div.appendChild(gotoButton);
+        
+        outputSection.appendChild(div);
+
+        // Clear input fields after adding information
+        document.getElementById("nameInput").value = "";
+        document.getElementById("emailInput").value = "";
+        document.getElementById("githubInput").value = "";
+    } else {
+        alert("Please fill in all fields.");
+    }
+});
+</script>
+
+</body>
+</html>
