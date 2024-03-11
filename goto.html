@@ -11,6 +11,15 @@
     .user-info {
         margin-bottom: 10px;
     }
+    #inputSection{
+        display: grid;
+        width: 25%;
+        margin: 10px;
+        justify-items: baseline;
+        padding:  10px;
+        gap: 10px;
+        
+    }
 </style>
 </head>
 <body>
@@ -37,6 +46,7 @@ document.getElementById("addButton").addEventListener("click", function() {
         
         var div = document.createElement("div");
         div.classList.add("user-info");
+        div.style.backgroundColor= "tomato"
         
         var namePara = document.createElement("p");
         namePara.textContent = "Name: " + name;
@@ -49,10 +59,8 @@ document.getElementById("addButton").addEventListener("click", function() {
         
         var gotoButton = document.createElement("button");
         gotoButton.textContent = "Go to User";
+
         gotoButton.addEventListener("click", function() {
-            // Here you can define the action when "Go to User" button is clicked.
-            // For demonstration, let's just log the user information.
-            //console.log("Name: " + name + "\nEmail: " + email + "\nGitHub Username: " + github);
             window.location.href = `https:www.github.com/${github}`;
         });
         
