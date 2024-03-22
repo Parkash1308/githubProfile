@@ -1,0 +1,17 @@
+.info{
+    display:grid;
+    width: 25%;
+    gap: 10px;
+}
+
+#submit{
+    background-color: rgb(191, 143, 83);
+    padding: 8px;
+    
+    border-radius: 12px;
+    color: rgb(138, 26, 26);
+}
+
+#area{
+    gap: 8px;
+}
